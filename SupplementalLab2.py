@@ -48,9 +48,3 @@ df2=df2[dfD.columns]
 #save to a new csv
 df2.to_csv("Inventories/output_final_all3files.csv",index=False)
 
-
-
-
-
-
-
