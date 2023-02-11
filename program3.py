@@ -1,3 +1,4 @@
+#!/bin/bash/python3
 """As part three of your homework, you are asked to write a program that will ask a user to
 enter <filename> as an input argument. Secondly, your program should read the file and saves
 each line of the file as an element in a list and returns it (Note, the retuned value should not
@@ -22,14 +23,22 @@ def my_read_function(cars):
 
     # Redaing file using realines() function
     car_data = file_prompt.readlines()
+    #print(car_data)
+    #sys.exit()
 
     #creating empty list file
     car_output_list =[]
 
     #stripping "\" from each line"
     for line in car_data:
+      
+      #print(line)
+
       line_with_no_new_line=line.strip()
       car_output_list.append(line_with_no_new_line)
+      
+      #print(car_output_list)
+      #sys.exit()
 
     return car_output_list
 
