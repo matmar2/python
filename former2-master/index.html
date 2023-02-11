@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Former2</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="img/site.webmanifest">
+        <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <link href="favicon.ico" rel="shortcut icon">
+        <meta name="description" content="Convert your existing cloud resources into CloudFormation / Terraform / Troposphere" />
+        <meta property="og:title" content="Former2" />
+        <meta property="og:description" content="Convert your existing cloud resources into CloudFormation / Terraform / Troposphere" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://former2.com/" />
+        <meta property="og:image" content="https://former2.com/img/squarelogo.png" />
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="css/separate/elements/steps.min.css">
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.min.css">-->
+        <link rel="stylesheet" href="css/separate/vendor/tags_editor.min.css">
+        <link rel="stylesheet" href="css/lib/bootstrap-table/bootstrap-table.css">
+        <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+        <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="js/lib/tippy/themes/material.css">
+
+        <link rel="stylesheet" href="css/separate/vendor/blockui.min.css">
+        <link rel="stylesheet" href="css/separate/pages/widgets.min.css">
+        <link rel="stylesheet" href="css/separate/pages/others.min.css">
+        <link rel="stylesheet" href="css/separate/vendor/select2.min.css">
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- CodeMirror -->
+        <link rel="stylesheet" href="lib/codemirror/codemirror.css">
+
+        <link rel="stylesheet" href="lib/codemirror/theme/3024-day.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/3024-night.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/abcdef.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/ambiance-mobile.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/ambiance.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/base16-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/base16-light.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/bespin.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/blackboard.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/cobalt.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/colorforth.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/darcula.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/dracula.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/duotone-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/duotone-light.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/eclipse.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/elegant.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/erlang-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/gruvbox-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/hopscotch.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/icecoder.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/idea.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/isotope.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/lesser-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/liquibyte.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/lucario.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/material.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/mbo.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/mdn-like.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/midnight.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/monokai.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/neat.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/neo.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/night.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/oceanic-next.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/panda-syntax.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/paraiso-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/paraiso-light.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/pastel-on-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/railscasts.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/rubyblue.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/seti.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/shadowfox.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/solarized.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/ssms.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/the-matrix.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/tomorrow-night-bright.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/tomorrow-night-eighties.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/ttcn.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/twilight.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/vibrant-ink.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/xq-dark.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/xq-light.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/yeti.css">
+        <link rel="stylesheet" href="lib/codemirror/theme/zenburn.css">
+
+        <script src="lib/codemirror/codemirror.js"></script>
+        <script src="lib/codemirror/mode/python/python.js"></script>
+        <script src="lib/codemirror/mode/shell/shell.js"></script>
+        <script src="lib/codemirror/mode/go/go.js"></script>
+        <script src="lib/codemirror/mode/javascript/javascript.js"></script>
+        <script src="lib/codemirror/mode/yaml/yaml.js"></script>
+        <script src="lib/codemirror/mode/ruby/ruby.js"></script>
+        <script src="lib/codemirror/mode/clike/clike.js"></script>
+    </head>
+    <body class="with-side-menu">
+
+        <header class="site-header">
+            <div class="container-fluid">
+                <a href="#" class="site-logo">
+                    <img class="hidden-md-down" src="img/logo-2.png" alt="">
+                    <img class="hidden-lg-down" src="img/logo-2-mob.png" alt="">
+                </a>
+
+                <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
+                    <span>toggle menu</span>
+                </button>
+
+                <button class="hamburger hamburger--htla">
+                    <span>toggle menu</span>
+                </button>
+                <div class="site-header-content">
+                    <div class="site-header-content-in">
+                        <div class="site-header-shown">
+                            <button type="button" class="burger-right">
+                                <i class="font-icon-menu-addl"></i>
+                            </button>
+                        </div>
+
+                        <div class="mobile-menu-right-overlay"></div>
+                        <div class="site-header-collapsed">
+                            <div class="site-header-collapsed-in" style="margin-right: 0;">
+
+                                <button class="btn btn-nav btn-inline btn-primary" id="generate-outputs" disabled>
+                                    Generate
+                                </button>
+
+                                <div class="dropdown" style="float: right;">
+                                    <button class="btn btn-rounded btn-inline btn-secondary dropdown-toggle" id="selected-region" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&nbsp;&nbsp;</button>
+                                    <div class="dropdown-menu" aria-labelledby="selected-region">
+                                        <a class="dropdown-item region-item" data-region="us-east-1">US East (N. Virginia)</a>
+                                        <a class="dropdown-item region-item" data-region="us-east-2">US East (Ohio)</a>
+                                        <a class="dropdown-item region-item" data-region="us-west-1">US West (N. California)</a>
+                                        <a class="dropdown-item region-item" data-region="us-west-2">US West (Oregon)</a>
+                                        <a class="dropdown-item region-item" data-region="af-south-1">Africa (Cape Town)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-east-1">Asia Pacific (Hong Kong)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-south-1">Asia Pacific (Mumbai)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-northeast-3">Asia Pacific (Osaka)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-northeast-2">Asia Pacific (Seoul)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-southeast-1">Asia Pacific (Singapore)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-southeast-2">Asia Pacific (Sydney)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-southeast-3">Asia Pacific (Jakarta)</a>
+                                        <a class="dropdown-item region-item" data-region="ap-northeast-1">Asia Pacific (Tokyo)</a>
+                                        <a class="dropdown-item region-item" data-region="ca-central-1">Canada (Central)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-central-1">EU (Frankfurt)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-central-2">EU (Zurich)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-west-1">EU (Ireland)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-west-2">EU (London)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-south-1">EU (Milan)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-west-3">EU (Paris)</a>
+                                        <a class="dropdown-item region-item" data-region="eu-north-1">EU (Stockholm)</a>
+                                        <a class="dropdown-item region-item" data-region="me-south-1">Middle East (Bahrain)</a>
+                                        <a class="dropdown-item region-item" data-region="sa-east-1">South America (S&#227;o Paulo)</a>
+                                        <a class="dropdown-item region-item" data-region="us-gov-east-1">AWS GovCloud (US-Gov-East)</a>
+                                        <a class="dropdown-item region-item" data-region="us-gov-west-1">AWS GovCloud (US-Gov-West)</a>
+                                        <a class="dropdown-item region-item" data-region="cn-north-1">China (Beijing)</a>
+                                        <a class="dropdown-item region-item" data-region="cn-northwest-1">China (Ningxia)</a>
+                                    </div>
+                                </div>
+
+                                <button disabled class="btn btn-sm btn-success scan-account" style="margin-right: 10px; float: right; padding-top: 3px; margin-bottom: 8px;">
+                                    Scan Account
+                                </button>
+
+                                <div class="site-header-search-container">
+                                    <form id="minisearch-form" class="site-header-search closed">
+                                        <input id="minisearch-input" type="text" placeholder="Search"/>
+                                        <button type="submit">
+                                            <span class="font-icon-search"></span>
+                                        </button>
+                                        <div class="overlay"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mobile-menu-left-overlay"></div>
+        <nav class="side-menu">
+            <ul class="side-menu-list">
+                <li class="gold">
+                    <a href="#section-dashboard" data-category="dashboard">
+                        <i class="font-icon font-icon-dashboard"></i>
+                        <span class="lbl">Dashboard</span>
+                    </a>
+                </li>
+                <li class="aquamarine">
+                    <a href="#section-search" data-category="search">
+                        <i class="font-icon glyphicon glyphicon-search"></i>
+                        <span class="lbl">Search</span>
+                    </a>
+                </li>
+                <li class="grey with-sub" data-category="setup">
+                    <span>
+                        <i class="font-icon glyphicon glyphicon-cog"></i>
+                        <span class="lbl">Setup</span>
+                    </span>
+                    <ul>
+                        <li><a href="#section-setup-introduction"><span class="lbl">Introduction</span></a></li>
+                        <li><a href="#section-setup-credentials"><span class="lbl">Credentials</span></a></li>
+                        <li><a href="#section-setup-parameters"><span class="lbl">Parameters</span></a></li>
+                        <li><a href="#section-setup-settings"><span class="lbl">Settings</span></a></li>
+                    </ul>
+                </li>
+                <li class="purple with-sub" data-category="outputs">
+                    <span>
+                        <i class="font-icon glyphicon glyphicon-list-alt"></i>
+                        <span class="lbl">Outputs</span>
+                    </span>
+                    <ul>
+                        <li><a href="#section-outputs-cloudformation"><span class="lbl">CloudFormation</span></a></li>
+                        <li><a href="#section-outputs-tf"><span class="lbl">Terraform</span></a></li>
+                        <li><a href="#section-outputs-troposphere"><span class="lbl">Troposphere</span></a></li>
+                        <li><a href="#section-outputs-cdk"><span class="lbl">CDK (V1)</span></a></li>
+                        <li><a href="#section-outputs-cdkv2"><span class="lbl">CDK (V2)</span></a></li>
+                        <li><a href="#section-outputs-cdktf"><span class="lbl">CDK (Terraform)</span></a></li>
+                        <li><a href="#section-outputs-pulumi"><span class="lbl">Pulumi</span></a></li>
+                        <li><a href="#section-outputs-diagram"><span class="lbl">Diagram</span></a></li>
+                        <!--<li><a href="#section-outputs-iam"><span class="lbl">IAM</span></a></li>-->
+                        <li><a href="#section-outputs-raw"><span class="lbl">Raw Output (Debug)</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <section>
+                <header class="side-menu-title">Categories</header>
+                <ul class="side-menu-list">
+                    <li class="gold with-sub" data-category="compute">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Compute_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Compute</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-compute-ec2"><span class="lbl">EC2</span></a></li>
+                            <li><a href="#section-compute-lightsail"><span class="lbl">Lightsail</span></a></li>
+                            <li><a href="#section-compute-lambda"><span class="lbl">Lambda</span></a></li>
+                            <li><a href="#section-compute-batch"><span class="lbl">Batch</span></a></li>
+                            <li><a href="#section-compute-elasticbeanstalk"><span class="lbl">Elastic Beanstalk</span></a></li>
+                            <li><a href="#section-compute-ec2imagebuilder"><span class="lbl">EC2 Image Builder</span></a></li>
+                            <li><a href="#section-compute-apprunner"><span class="lbl">App Runner</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="gold with-sub" data-category="containers">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Containers_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Containers</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-containers-ecr"><span class="lbl">ECR</span></a></li>
+                            <li><a href="#section-containers-ecs"><span class="lbl">ECS</span></a></li>
+                            <li><a href="#section-containers-eks"><span class="lbl">EKS</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="green with-sub" data-category="storage">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Storage_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Storage</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-storage-s3"><span class="lbl">S3</span></a></li>
+                            <li><a href="#section-storage-efs"><span class="lbl">EFS</span></a></li>
+                            <li><a href="#section-storage-fsx"><span class="lbl">FSx</span></a></li>
+                            <li><a href="#section-storage-glacier"><span class="lbl">Glacier</span></a></li>
+                            <li><a href="#section-storage-storagegateway"><span class="lbl">Storage Gateway</span></a></li>
+                            <li><a href="#section-storage-backup"><span class="lbl">Backup</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="blue with-sub" data-category="database">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Database_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Database</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-database-rds"><span class="lbl">RDS</span></a></li>
+                            <li><a href="#section-database-dynamodb"><span class="lbl">DynamoDB</span></a></li>
+                            <li><a href="#section-database-elasticache"><span class="lbl">ElastiCache</span></a></li>
+                            <li><a href="#section-database-neptune"><span class="lbl">Neptune</span></a></li>
+                            <li><a href="#section-database-redshift"><span class="lbl">Redshift</span></a></li>
+                            <li><a href="#section-database-qldb"><span class="lbl">QLDB</span></a></li>
+                            <li><a href="#section-database-documentdb"><span class="lbl">DocumentDB</span></a></li>
+                            <li><a href="#section-database-timestream"><span class="lbl">Timestream</span></a></li>
+                            <li><a href="#section-database-memorydb"><span class="lbl">MemoryDB</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="aquamarine with-sub" data-category="migrationandtransfer">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Migration-Transfer_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Migration &amp; Transfer</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-migrationandtransfer-migrationhub"><span class="lbl">Migration Hub</span></a></li>
+                            <li><a href="#section-migrationandtransfer-databasemigrationservice"><span class="lbl">Database Migration Service</span></a></li>
+                            <li><a href="#section-migrationandtransfer-transfer"><span class="lbl">Transfer</span></a></li>
+                            <li><a href="#section-migrationandtransfer-datasync"><span class="lbl">DataSync</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="purple with-sub" data-category="networkingandcontentdelivery">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Networking-Content-Delivery_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Networking &amp; Content Delivery</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-networkingandcontentdelivery-vpc"><span class="lbl">VPC</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-cloudfront"><span class="lbl">CloudFront</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-route53"><span class="lbl">Route 53</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-apigateway"><span class="lbl">API Gateway</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-directconnect"><span class="lbl">Direct Connect</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-appmesh"><span class="lbl">App Mesh</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-cloudmap"><span class="lbl">Cloud Map</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-globalaccelerator"><span class="lbl">Global Accelerator</span></a></li>
+                            <li><a href="#section-networkingandcontentdelivery-vpcipam"><span class="lbl">VPC IPAM</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="blue with-sub" data-category="developertools">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Developer-Tools_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Developer Tools</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-developertools-codestar"><span class="lbl">CodeStar</span></a></li>
+                            <li><a href="#section-developertools-codecommit"><span class="lbl">CodeCommit</span></a></li>
+                            <li><a href="#section-developertools-codeartifact"><span class="lbl">CodeArtifact</span></a></li>
+                            <li><a href="#section-developertools-codebuild"><span class="lbl">CodeBuild</span></a></li>
+                            <li><a href="#section-developertools-codedeploy"><span class="lbl">CodeDeploy</span></a></li>
+                            <li><a href="#section-developertools-codepipeline"><span class="lbl">CodePipeline</span></a></li>
+                            <li><a href="#section-developertools-cloud9"><span class="lbl">Cloud9</span></a></li>
+                            <li><a href="#section-developertools-xray"><span class="lbl">X-Ray</span></a></li>
+                            <li><a href="#section-developertools-fis"><span class="lbl">FIS</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="red with-sub" data-category="robotics">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Robotics_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Robotics</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-robotics-robomaker"><span class="lbl">RoboMaker</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="gold with-sub" data-category="blockchain">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Blockchain_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Blockchain</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-blockchain-managedblockchain"><span class="lbl">Managed Blockchain</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="blue with-sub" data-category="satellite">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Satellite_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Satellite</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-satellite-groundstation"><span class="lbl">Ground Station</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="pink with-sub" data-category="managementandgovernance">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Management-Governance_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Management &amp; Governance</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-managementandgovernance-organizations"><span class="lbl">Organizations</span></a></li>
+                            <li><a href="#section-managementandgovernance-cloudwatch"><span class="lbl">CloudWatch</span></a></li>
+                            <li><a href="#section-managementandgovernance-autoscaling"><span class="lbl">Auto Scaling</span></a></li>
+                            <li><a href="#section-managementandgovernance-cloudtrail"><span class="lbl">CloudTrail</span></a></li>
+                            <li><a href="#section-managementandgovernance-config"><span class="lbl">Config</span></a></li>
+                            <li><a href="#section-managementandgovernance-opsworks"><span class="lbl">OpsWorks</span></a></li>
+                            <li><a href="#section-managementandgovernance-servicecatalog"><span class="lbl">Service Catalog</span></a></li>
+                            <li><a href="#section-managementandgovernance-systemsmanager"><span class="lbl">Systems Manager</span></a></li>
+                            <li><a href="#section-managementandgovernance-appconfig"><span class="lbl">AppConfig</span></a></li>
+                            <li><a href="#section-managementandgovernance-licensemanager"><span class="lbl">License Manager</span></a></li>
+                            <li><a href="#section-managementandgovernance-prometheus"><span class="lbl">Prometheus</span></a></li>
+                            <li><a href="#section-managementandgovernance-resiliencehub"><span class="lbl">Resilience Hub</span></a></li>
+                            <li><a href="#section-managementandgovernance-incidentmanager"><span class="lbl">Incident Manager</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="gold with-sub" data-category="mediaservices">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Media-Services_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Media Services</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-mediaservices-elastictranscoder"><span class="lbl">Elastic Transcoder</span></a></li>
+                            <li><a href="#section-mediaservices-mediaconnect"><span class="lbl">MediaConnect</span></a></li>
+                            <li><a href="#section-mediaservices-mediaconvert"><span class="lbl">MediaConvert</span></a></li>
+                            <li><a href="#section-mediaservices-medialive"><span class="lbl">MediaLive</span></a></li>
+                            <li><a href="#section-mediaservices-mediapackage"><span class="lbl">MediaPackage</span></a></li>
+                            <li><a href="#section-mediaservices-mediastore"><span class="lbl">MediaStore</span></a></li>
+                            <li><a href="#section-mediaservices-interactivevideoservice"><span class="lbl">Interactive Video Service</span></a></li>
+                            <li><a href="#section-mediaservices-nimblestudio"><span class="lbl">Nimble Studio</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="aquamarine with-sub" data-category="machinelearning">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Machine-Learning_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Machine Learning</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-machinelearning-sagemaker"><span class="lbl">SageMaker</span></a></li>
+                            <li><a href="#section-machinelearning-codeguru"><span class="lbl">CodeGuru</span></a></li>
+                            <li><a href="#section-machinelearning-devopsguru"><span class="lbl">DevOps Guru</span></a></li>
+                            <li><a href="#section-machinelearning-forecast"><span class="lbl">Forecast</span></a></li>
+                            <li><a href="#section-machinelearning-personalize"><span class="lbl">Personalize</span></a></li>
+                            <li><a href="#section-machinelearning-frauddetector"><span class="lbl">Fraud Detector</span></a></li>
+                            <li><a href="#section-machinelearning-kendra"><span class="lbl">Kendra</span></a></li>
+                            <li><a href="#section-machinelearning-lex"><span class="lbl">Lex</span></a></li>
+                            <li><a href="#section-machinelearning-rekognition"><span class="lbl">Rekognition</span></a></li>
+                            <li><a href="#section-machinelearning-panorama"><span class="lbl">Panorama</span></a></li>
+                            <li><a href="#section-machinelearning-healthlake"><span class="lbl">HealthLake</span></a></li>
+                            <li><a href="#section-machinelearning-lookoutforvision"><span class="lbl">Lookout For Vision</span></a></li>
+                            <li><a href="#section-machinelearning-lookoutforequipment"><span class="lbl">Lookout For Equipment</span></a></li>
+                            <li><a href="#section-machinelearning-lookoutformetrics"><span class="lbl">Lookout For Metrics</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="purple with-sub" data-category="analytics">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Analytics_64@5x.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Analytics</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-analytics-athena"><span class="lbl">Athena</span></a></li>
+                            <li><a href="#section-analytics-emr"><span class="lbl">EMR</span></a></li>
+                            <li><a href="#section-analytics-opensearch"><span class="lbl">OpenSearch</span></a></li>
+                            <li><a href="#section-analytics-kinesis"><span class="lbl">Kinesis</span></a></li>
+                            <li><a href="#section-analytics-quicksight"><span class="lbl">QuickSight</span></a></li>
+                            <li><a href="#section-analytics-datapipeline"><span class="lbl">Data Pipeline</span></a></li>
+                            <li><a href="#section-analytics-glue"><span class="lbl">Glue</span></a></li>
+                            <li><a href="#section-analytics-lakeformation"><span class="lbl">Lake Formation</span></a></li>
+                            <li><a href="#section-analytics-msk"><span class="lbl">MSK</span></a></li>
+                            <li><a href="#section-analytics-databrew"><span class="lbl">DataBrew</span></a></li>
+                            <li><a href="#section-analytics-finspace"><span class="lbl">FinSpace</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="red with-sub" data-category="securityidentityandcompliance">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Security-Identity-Compliance_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Security, Identity, &amp; Compliance</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-securityidentityandcompliance-iam"><span class="lbl">IAM</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-resourceaccessmanager"><span class="lbl">Resource Access Manager</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-cognito"><span class="lbl">Cognito</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-secretsmanager"><span class="lbl">Secrets Manager</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-guardduty"><span class="lbl">GuardDuty</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-inspector"><span class="lbl">Inspector</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-macie"><span class="lbl">Macie</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-singlesignon"><span class="lbl">Single Sign-On</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-certificatemanager"><span class="lbl">Certificate Manager</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-kms"><span class="lbl">KMS</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-cloudhsm"><span class="lbl">CloudHSM</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-directoryservice"><span class="lbl">Directory Service</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-wafandshield"><span class="lbl">WAF &amp; Shield</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-securityhub"><span class="lbl">Security Hub</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-detective"><span class="lbl">Detective</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-auditmanager"><span class="lbl">Audit Manager</span></a></li>
+                            <li><a href="#section-securityidentityandcompliance-signer"><span class="lbl">Signer</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="red with-sub" data-category="mobile">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Front-End-Web-Mobile_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Front-end Web &amp; Mobile</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-mobile-amplify"><span class="lbl">Amplify</span></a></li>
+                            <li><a href="#section-mobile-appsync"><span class="lbl">AppSync</span></a></li>
+                            <li><a href="#section-mobile-devicefarm"><span class="lbl">Device Farm</span></a></li>
+                            <li><a href="#section-mobile-locationservice"><span class="lbl">Location Service</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="pink with-sub" data-category="applicationintegration">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Application-Integration_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Application Integration</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-applicationintegration-stepfunctions"><span class="lbl">Step Functions</span></a></li>
+                            <li><a href="#section-applicationintegration-appflow"><span class="lbl">AppFlow</span></a></li>
+                            <li><a href="#section-applicationintegration-eventbridge"><span class="lbl">EventBridge</span></a></li>
+                            <li><a href="#section-applicationintegration-amazonmq"><span class="lbl">Amazon MQ</span></a></li>
+                            <li><a href="#section-applicationintegration-sns"><span class="lbl">SNS</span></a></li>
+                            <li><a href="#section-applicationintegration-sqs"><span class="lbl">SQS</span></a></li>
+                            <li><a href="#section-applicationintegration-swf"><span class="lbl">SWF</span></a></li>
+                            <li><a href="#section-applicationintegration-managedapacheairflow"><span class="lbl">Managed Apache Airflow</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="green with-sub" data-category="awscostmanagement">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_AWS-Cost-Management_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">AWS Cost Management</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-awscostmanagement-costexplorer"><span class="lbl">Cost Explorer</span></a></li>
+                            <li><a href="#section-awscostmanagement-budgets"><span class="lbl">Budgets</span></a></li>
+                            <li><a href="#section-awscostmanagement-billingconductor"><span class="lbl">Billing Conductor</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="red with-sub" data-category="businessapplications">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Business-Applications_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Business Applications</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-businessapplications-connect"><span class="lbl">Connect</span></a></li>
+                            <li><a href="#section-businessapplications-pinpoint"><span class="lbl">Pinpoint</span></a></li>
+                            <li><a href="#section-businessapplications-ses"><span class="lbl">SES</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="red with-sub" data-category="endusercomputing">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_End-User-Computing_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">End User Computing</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-endusercomputing-workspaces"><span class="lbl">WorkSpaces</span></a></li>
+                            <li><a href="#section-endusercomputing-appstream"><span class="lbl">AppStream</span></a></li>
+                            <li><a href="#section-endusercomputing-worklink"><span class="lbl">WorkLink</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="green with-sub" data-category="internetofthings">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Internet-of-Things_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Internet Of Things</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-internetofthings-core"><span class="lbl">Core</span></a></li>
+                            <li><a href="#section-internetofthings-1click"><span class="lbl">1-Click</span></a></li>
+                            <li><a href="#section-internetofthings-analytics"><span class="lbl">Analytics</span></a></li>
+                            <li><a href="#section-internetofthings-devicemanagement"><span class="lbl">Device Management</span></a></li>
+                            <li><a href="#section-internetofthings-events"><span class="lbl">Events</span></a></li>
+                            <li><a href="#section-internetofthings-greengrass"><span class="lbl">Greengrass</span></a></li>
+                            <li><a href="#section-internetofthings-sitewise"><span class="lbl">SiteWise</span></a></li>
+                            <li><a href="#section-internetofthings-thingsgraph"><span class="lbl">Things Graph</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="purple with-sub" data-category="gamedevelopment">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/Arch-Category_Game-Tech_64.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Game Development</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-gamedevelopment-gamelift"><span class="lbl">GameLift</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="grey with-sub" data-category="other">
+                        <span>
+                            <i class="font-icon" style="left: 19px; top: 10px;"><img src="img/aws/General_light-bg.png" style="width: 16px; height: 16px;" /></i>
+                            <span class="lbl">Other</span>
+                        </span>
+                        <ul>
+                            <li><a href="#section-other-simpledb"><span class="lbl">SimpleDB</span></a></li>
+                            <li><a href="#section-other-resourcegroups"><span class="lbl">Resource Groups</span></a></li>
+                            <li><a href="#section-other-servicequotas"><span class="lbl">Service Quotas</span></a></li>
+                            <li><a href="#section-other-costandusagereports"><span class="lbl">Cost &amp; Usage Reports</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="modal fade" id="relatedmodal" tabindex="-1" role="dialog" aria-labelledby="relatedmodal" aria-hidden="true">
+                   <div class="modal-dialog" role="document">
+                       <div class="modal-content">
+                           <!--<div class="modal-header">
+                               <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close">
+                                   <i class="font-icon-close-2"></i>
+                               </button>
+                               <h4 class="modal-title" id="relatedmodal">Related Resources</h4>
+                           </div>-->
+                           <div class="modal-body">
+                               <p>Would you like to add these related resources?</p>
+                               <div class="checkbox">
+                                    <input type="checkbox" id="add-related-selectall" class="related-check-all">
+                                    <label for="add-related-selectall">Select All</label>
+                                </div>
+                               <div id="relatedresources"></div>
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                               <button type="button" class="btn btn-primary" id="related-add-selected-button">Add Selected</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="modal fade" id="importmodal" tabindex="-1" role="dialog" aria-labelledby="importmodal" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                          <div class="modal-body">
+                              <br />
+                              <h4 class="modal-title">Import into a CloudFormation Stack (<a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html" target="_blank">What is this?</a>)</h4>
+                              <p>Enter the details below to create a CloudFormation Stack containing the selected resources.</p>
+                              <fieldset class="form-group">
+                                <label class="form-label semibold" for="import-stackname">Stack Name</label>
+                                <input type="text" class="form-control" id="import-stackname" placeholder="MyStack" value="">
+                              </fieldset>
+                              <fieldset class="form-group">
+                                <label class="form-label semibold" for="import-deletionpolicy">Deletion Policy (<a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html" target="_blank">What is this?</a>)</label>
+                                <select id="import-deletionpolicy" class="select2-arrow manual select2-no-search-arrow">
+                                    <option value="Retain">Retain</option>
+                                    <option value="Delete">Delete</option>
+                                </select>
+                              </fieldset>
+                              <small>You can also <a id="import-download-template" href="#section-outputs-cloudformation">download the template</a> only.</small>
+                              <div id="import-warnings"></div>
+                              <br />
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-primary" disabled id="import-button">Create Change Set</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+                <header class="section-header">
+                    <div class="tbl">
+                        <div class="tbl-row">
+                            <div id="header-breadcrumb" class="tbl-cell" style="visibility: hidden;">
+                                <h3 id="header-title"></h3>
+                                <ol class="breadcrumb breadcrumb-simple">
+                                    <li><a id="header-breadcrumb1" href="#section-setup-introduction"></a></li>
+                                    <li id="header-breadcrumb2" class="active"></li>
+                                </ol>
+                            </div>
+                            <button id="header-button-clear-outputs" type="button" class="f2-header-button btn btn-danger-outline" style="margin-left: 16px; display: none;"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;Clear All</button>
+                            <button id="header-button-import-cfn" type="button" class="f2-header-button btn btn-info-outline" style="margin-left: 16px; display: none;"><i class="fa fa-cloud-upload"></i>&nbsp;&nbsp;Import</button>
+                            <button id="header-button-download-diagram" type="button" class="f2-header-button btn btn-info-outline" style="margin-left: 16px; display: none;"><i class="fa fa-download"></i>&nbsp;&nbsp;Download PNG</button>
+                            <button id="header-button-copy-cfn" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-tf" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-troposphere" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-cdk" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-cdkv2" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-cdktf" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-pulumi" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                            <button id="header-button-copy-raw" type="button" class="f2-header-button btn btn-default-outline" style="display: none;"><i class="fa fa-files-o"></i>&nbsp;&nbsp;Copy</button>
+                        </div>
+                    </div>
+                </header>
+
+                <section id="section-dashboard" data-section-breadcrumb1-title="Dashboard" data-section-breadcrumb1-link="#section-dashboard" data-section-title="Dashboard" class="former2-section" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <section class="box-typical box-typical-padding" style="padding: 40px 40px 30px 40px;">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Compute_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Compute</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-compute-ec2" style="font-weight: 600;">EC2</a><br />
+                                                    <a href="#section-compute-lightsail" style="font-weight: 600;">Lightsail</a><br />
+                                                    <a href="#section-compute-lambda" style="font-weight: 600;">Lambda</a><br />
+                                                    <a href="#section-compute-batch" style="font-weight: 600;">Batch</a><br />
+                                                    <a href="#section-compute-elasticbeanstalk" style="font-weight: 600;">Elastic Beanstalk</a><br />
+                                                    <a href="#section-compute-ec2imagebuilder" style="font-weight: 600;">EC2 Image Builder</a><br />
+                                                    <a href="#section-compute-apprunner" style="font-weight: 600;">App Runner</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Containers_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Containers</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-containers-ecr" style="font-weight: 600;">ECR</a><br />
+                                                    <a href="#section-containers-ecs" style="font-weight: 600;">ECS</a><br />
+                                                    <a href="#section-containers-eks" style="font-weight: 600;">EKS</a><br />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Storage_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Storage</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-storage-s3" style="font-weight: 600;">S3</a><br />
+                                                    <a href="#section-storage-efs" style="font-weight: 600;">EFS</a><br />
+                                                    <a href="#section-storage-fsx" style="font-weight: 600;">FSx</a><br />
+                                                    <a href="#section-storage-glacier" style="font-weight: 600;">Glacier</a><br />
+                                                    <a href="#section-storage-storagegateway" style="font-weight: 600;">Storage Gateway</a><br />
+                                                    <a href="#section-storage-backup" style="font-weight: 600;">Backup</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Database_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Database</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-database-rds" style="font-weight: 600;">RDS</a><br />
+                                                    <a href="#section-database-dynamodb" style="font-weight: 600;">DynamoDB</a><br />
+                                                    <a href="#section-database-elasticache" style="font-weight: 600;">ElastiCache</a><br />
+                                                    <a href="#section-database-neptune" style="font-weight: 600;">Neptune</a><br />
+                                                    <a href="#section-database-redshift" style="font-weight: 600;">Redshift</a><br />
+                                                    <a href="#section-database-qldb" style="font-weight: 600;">QLDB</a><br />
+                                                    <a href="#section-database-documentdb" style="font-weight: 600;">DocumentDB</a><br />
+                                                    <a href="#section-database-timestream" style="font-weight: 600;">Timestream</a><br />
+                                                    <a href="#section-database-memorydb" style="font-weight: 600;">MemoryDB</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Migration-Transfer_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Migration &amp; Transfer</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-migrationandtransfer-migrationhub" style="font-weight: 600;">Migration Hub</a><br />
+                                                    <a href="#section-migrationandtransfer-databasemigrationservice" style="font-weight: 600;">Database Migration Service</a><br />
+                                                    <a href="#section-migrationandtransfer-transfer" style="font-weight: 600;">Transfer</a><br />
+                                                    <a href="#section-migrationandtransfer-datasync" style="font-weight: 600;">DataSync</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Networking-Content-Delivery_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Networking &amp; Content Delivery</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-networkingandcontentdelivery-vpc" style="font-weight: 600;">VPC</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-cloudfront" style="font-weight: 600;">CloudFront</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-route53" style="font-weight: 600;">Route 53</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-apigateway" style="font-weight: 600;">API Gateway</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-directconnect" style="font-weight: 600;">Direct Connect</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-appmesh" style="font-weight: 600;">App Mesh</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-cloudmap" style="font-weight: 600;">Cloud Map</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-globalaccelerator" style="font-weight: 600;">Global Accelerator</a><br />
+                                                    <a href="#section-networkingandcontentdelivery-vpcipam" style="font-weight: 600;">VPC IPAM</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Developer-Tools_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Developer Tools</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-developertools-codestar" style="font-weight: 600;">CodeStar</a><br />
+                                                    <a href="#section-developertools-codecommit" style="font-weight: 600;">CodeCommit</a><br />
+                                                    <a href="#section-developertools-codeartifact" style="font-weight: 600;">CodeArtifact</a><br />
+                                                    <a href="#section-developertools-codebuild" style="font-weight: 600;">CodeBuild</a><br />
+                                                    <a href="#section-developertools-codedeploy" style="font-weight: 600;">CodeDeploy</a><br />
+                                                    <a href="#section-developertools-codepipeline" style="font-weight: 600;">CodePipeline</a><br />
+                                                    <a href="#section-developertools-cloud9" style="font-weight: 600;">Cloud9</a><br />
+                                                    <a href="#section-developertools-xray" style="font-weight: 600;">X-Ray</a><br />
+                                                    <a href="#section-developertools-fis" style="font-weight: 600;">FIS</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Robotics_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Robotics</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-robotics-robomaker" style="font-weight: 600;">RoboMaker</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Blockchain_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Blockchain</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-blockchain-managedblockchain" style="font-weight: 600;">Managed Blockchain</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Satellite_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Satellite</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-satellite-groundstation" style="font-weight: 600;">Ground Station</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Management-Governance_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Management &amp; Governance</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-managementandgovernance-organizations" style="font-weight: 600;">Organizations</a><br />
+                                                    <a href="#section-managementandgovernance-cloudwatch" style="font-weight: 600;">CloudWatch</a><br />
+                                                    <a href="#section-managementandgovernance-autoscaling" style="font-weight: 600;">Auto Scaling</a><br />
+                                                    <a href="#section-managementandgovernance-cloudtrail" style="font-weight: 600;">CloudTrail</a><br />
+                                                    <a href="#section-managementandgovernance-config" style="font-weight: 600;">Config</a><br />
+                                                    <a href="#section-managementandgovernance-opsworks" style="font-weight: 600;">OpsWorks</a><br />
+                                                    <a href="#section-managementandgovernance-servicecatalog" style="font-weight: 600;">Service Catalog</a><br />
+                                                    <a href="#section-managementandgovernance-systemsmanager" style="font-weight: 600;">Systems Manager</a><br />
+                                                    <a href="#section-managementandgovernance-appconfig" style="font-weight: 600;">AppConfig</a><br />
+                                                    <a href="#section-managementandgovernance-licensemanager" style="font-weight: 600;">License Manager</a><br />
+                                                    <a href="#section-managementandgovernance-prometheus" style="font-weight: 600;">Prometheus</a><br />
+                                                    <a href="#section-managementandgovernance-resiliencehub" style="font-weight: 600;">Resilience Hub</a><br />
+                                                    <a href="#section-managementandgovernance-incidentmanager" style="font-weight: 600;">Incident Manager</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Media-Services_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Media Services</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-mediaservices-elastictranscoder" style="font-weight: 600;">Elastic Transcoder</a><br />
+                                                    <a href="#section-mediaservices-mediaconnect" style="font-weight: 600;">MediaConnect</a><br />
+                                                    <a href="#section-mediaservices-mediaconvert" style="font-weight: 600;">MediaConvert</a><br />
+                                                    <a href="#section-mediaservices-medialive" style="font-weight: 600;">MediaLive</a><br />
+                                                    <a href="#section-mediaservices-mediapackage" style="font-weight: 600;">MediaPackage</a><br />
+                                                    <a href="#section-mediaservices-mediastore" style="font-weight: 600;">MediaStore</a><br />
+                                                    <a href="#section-mediaservices-interactivevideoservice" style="font-weight: 600;">Interactive Video Service</a><br />
+                                                    <a href="#section-mediaservices-nimblestudio" style="font-weight: 600;">Nimble Studio</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Machine-Learning_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Machine Learning</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-machinelearning-sagemaker" style="font-weight: 600;">SageMaker</a><br />
+                                                    <a href="#section-machinelearning-codeguru" style="font-weight: 600;">CodeGuru</a><br />
+                                                    <a href="#section-machinelearning-devopsguru" style="font-weight: 600;">DevOps Guru</a><br />
+                                                    <a href="#section-machinelearning-forecast" style="font-weight: 600;">Forecast</a><br />
+                                                    <a href="#section-machinelearning-personalize" style="font-weight: 600;">Personalize</a><br />
+                                                    <a href="#section-machinelearning-frauddetector" style="font-weight: 600;">Fraud Detector</a><br />
+                                                    <a href="#section-machinelearning-kendra" style="font-weight: 600;">Kendra</a><br />
+                                                    <a href="#section-machinelearning-lex" style="font-weight: 600;">Lex</a><br />
+                                                    <a href="#section-machinelearning-rekognition" style="font-weight: 600;">Rekognition</a><br />
+                                                    <a href="#section-machinelearning-panorama" style="font-weight: 600;">Panorama</a><br />
+                                                    <a href="#section-machinelearning-healthlake" style="font-weight: 600;">HealthLake</a><br />
+                                                    <a href="#section-machinelearning-lookoutforvision" style="font-weight: 600;">Lookout For Vision</a><br />
+                                                    <a href="#section-machinelearning-lookoutforequipment" style="font-weight: 600;">Lookout For Equipment</a><br />
+                                                    <a href="#section-machinelearning-lookoutformetrics" style="font-weight: 600;">Lookout For Metrics</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Analytics_64@5x.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Analytics</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-analytics-athena" style="font-weight: 600;">Athena</a><br />
+                                                    <a href="#section-analytics-emr" style="font-weight: 600;">EMR</a><br />
+                                                    <a href="#section-analytics-opensearch" style="font-weight: 600;">OpenSearch</a><br />
+                                                    <a href="#section-analytics-kinesis" style="font-weight: 600;">Kinesis</a><br />
+                                                    <a href="#section-analytics-quicksight" style="font-weight: 600;">QuickSight</a><br />
+                                                    <a href="#section-analytics-datapipeline" style="font-weight: 600;">Data Pipeline</a><br />
+                                                    <a href="#section-analytics-glue" style="font-weight: 600;">Glue</a><br />
+                                                    <a href="#section-analytics-lakeformation" style="font-weight: 600;">Lake Formation</a><br />
+                                                    <a href="#section-analytics-msk" style="font-weight: 600;">MSK</a><br />
+                                                    <a href="#section-analytics-databrew" style="font-weight: 600;">DataBrew</a><br />
+                                                    <a href="#section-analytics-finspace" style="font-weight: 600;">FinSpace</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Security-Identity-Compliance_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Security, Identity, &amp; Compliance</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-securityidentityandcompliance-iam" style="font-weight: 600;">IAM</a><br />
+                                                    <a href="#section-securityidentityandcompliance-resourceaccessmanager" style="font-weight: 600;">Resource Access Manager</a><br />
+                                                    <a href="#section-securityidentityandcompliance-cognito" style="font-weight: 600;">Cognito</a><br />
+                                                    <a href="#section-securityidentityandcompliance-secretsmanager" style="font-weight: 600;">Secrets Manager</a><br />
+                                                    <a href="#section-securityidentityandcompliance-guardduty" style="font-weight: 600;">GuardDuty</a><br />
+                                                    <a href="#section-securityidentityandcompliance-inspector" style="font-weight: 600;">Inspector</a><br />
+                                                    <a href="#section-securityidentityandcompliance-macie" style="font-weight: 600;">Macie</a><br />
+                                                    <a href="#section-securityidentityandcompliance-singlesignon" style="font-weight: 600;">Single Sign-On</a><br />
+                                                    <a href="#section-securityidentityandcompliance-certificatemanager" style="font-weight: 600;">Certificate Manager</a><br />
+                                                    <a href="#section-securityidentityandcompliance-kms" style="font-weight: 600;">KMS</a><br />
+                                                    <a href="#section-securityidentityandcompliance-cloudhsm" style="font-weight: 600;">CloudHSM</a><br />
+                                                    <a href="#section-securityidentityandcompliance-directoryservice" style="font-weight: 600;">Directory Service</a><br />
+                                                    <a href="#section-securityidentityandcompliance-wafandshield" style="font-weight: 600;">WAF &amp; Shield</a><br />
+                                                    <a href="#section-securityidentityandcompliance-securityhub" style="font-weight: 600;">Security Hub</a><br />
+                                                    <a href="#section-securityidentityandcompliance-detective" style="font-weight: 600;">Detective</a><br />
+                                                    <a href="#section-securityidentityandcompliance-auditmanager" style="font-weight: 600;">Audit Manager</a><br />
+                                                    <a href="#section-securityidentityandcompliance-signer" style="font-weight: 600;">Signer</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_AWS-Cost-Management_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">AWS Cost Management</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-awscostmanagement-costexplorer" style="font-weight: 600;">Cost Explorer</a><br />
+                                                    <a href="#section-awscostmanagement-budgets" style="font-weight: 600;">Budgets</a><br />
+                                                    <a href="#section-awscostmanagement-billingconductor" style="font-weight: 600;">Billing Conductor</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Front-End-Web-Mobile_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Front-end Web &amp; Mobile</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-mobile-amplify" style="font-weight: 600;">Amplify</a><br />
+                                                    <a href="#section-mobile-appsync" style="font-weight: 600;">AppSync</a><br />
+                                                    <a href="#section-mobile-devicefarm" style="font-weight: 600;">Device Farm</a><br />
+                                                    <a href="#section-mobile-locationservice" style="font-weight: 600;">Location Service</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Application-Integration_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Application Integration</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-applicationintegration-stepfunctions" style="font-weight: 600;">Step Functions</a><br />
+                                                    <a href="#section-applicationintegration-appflow" style="font-weight: 600;">AppFlow</a><br />
+                                                    <a href="#section-applicationintegration-eventbridge" style="font-weight: 600;">EventBridge</a><br />
+                                                    <a href="#section-applicationintegration-amazonmq" style="font-weight: 600;">Amazon MQ</a><br />
+                                                    <a href="#section-applicationintegration-sns" style="font-weight: 600;">SNS</a><br />
+                                                    <a href="#section-applicationintegration-sqs" style="font-weight: 600;">SQS</a><br />
+                                                    <a href="#section-applicationintegration-swf" style="font-weight: 600;">SWF</a><br />
+                                                    <a href="#section-applicationintegration-managedapacheairflow" style="font-weight: 600;">Managed Apache Airflow</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Business-Applications_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Business Applications</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-businessapplications-connect" style="font-weight: 600;">Connect</a><br />
+                                                    <a href="#section-businessapplications-pinpoint" style="font-weight: 600;">Pinpoint</a><br />
+                                                    <a href="#section-businessapplications-ses" style="font-weight: 600;">SES</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_End-User-Computing_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">End User Computing</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-endusercomputing-workspaces" style="font-weight: 600;">WorkSpaces</a><br />
+                                                    <a href="#section-endusercomputing-appstream" style="font-weight: 600;">AppStream</a><br />
+                                                    <a href="#section-endusercomputing-worklink" style="font-weight: 600;">WorkLink</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Internet-of-Things_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Internet of Things</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-internetofthings-core" style="font-weight: 600;">Core</a><br />
+                                                    <a href="#section-internetofthings-1click" style="font-weight: 600;">1-Click</a><br />
+                                                    <a href="#section-internetofthings-analytics" style="font-weight: 600;">Analytics</a><br />
+                                                    <a href="#section-internetofthings-devicemanagement" style="font-weight: 600;">Device Management</a><br />
+                                                    <a href="#section-internetofthings-events" style="font-weight: 600;">Events</a><br />
+                                                    <a href="#section-internetofthings-greengrass" style="font-weight: 600;">Greengrass</a><br />
+                                                    <a href="#section-internetofthings-sitewise" style="font-weight: 600;">SiteWise</a><br />
+                                                    <a href="#section-internetofthings-thingsgraph" style="font-weight: 600;">Things Graph</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/Arch-Category_Game-Tech_64.png" style="width: 44px; height: 44px; padding: 2px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Game Development</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-gamedevelopment-gamelift" style="font-weight: 600;">GameLift</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="border: none; margin-bottom: 16px;">
+                                            <tr>
+                                                <td><img src="img/aws/General_light-bg.png" style="width: 48px; height: 48px;" /></td>
+                                                <td style="padding-left: 12px;"><h4 style="vertical-align: middle; margin-top: 6px; margin-bottom: 6px;">Other</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td style="padding-left: 12px;">
+                                                    <a href="#section-other-simpledb" style="font-weight: 600;">SimpleDB</a><br />
+                                                    <a href="#section-other-resourcegroups" style="font-weight: 600;">Resource Groups</a><br />
+                                                    <a href="#section-other-servicequotas" style="font-weight: 600;">Service Quotas</a><br />
+                                                    <a href="#section-other-costandusagereports" style="font-weight: 600;">Cost &amp; Usage Reports</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-setup-introduction" data-section-breadcrumb1-title="Setup" data-section-breadcrumb1-link="#section-setup-introduction" data-section-title="Introduction" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div class="steps-numeric-header">
+                        <div class="steps-numeric-header-in">
+                            <ul>
+                                <li class="active"><div class="item"><span class="num">1</span>Introduction</div></li>
+                                <li><div class="item"><span class="num">2</span>Credentials</div></li>
+                                <li><div class="item"><span class="num">3</span>Parameters</div></li>
+                                <li><div class="item"><span class="num">4</span>Settings</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-numeric-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <p>Welcome to Former2!</p>
+                                <p>Former2 allows you to generate Infrastructure-as-Code outputs from your existing resources within your AWS account. By making the relevant calls using the AWS JavaScript SDK, Former2 will scan across your infrastructure and present you with the list of resources for you to choose which to generate outputs for.</p>
+                                <p>Though <a href="https://github.com/aws/aws-sdk-js/blob/master/SERVICES.md" target="_blank">some AWS services</a> do not require it, you will need to install the Former2 Helper browser extension in order to have support for all AWS services. The extension exists to bypass a lack of CORS on some services, such as S3 and IAM.</p>
+                                <p>
+                                    <table style="border: none;">
+                                        <tr>
+                                            <td><a href="https://chrome.google.com/webstore/detail/former2-helper/fhejmeojlbhfhjndnkkleooeejklmigi" target="_blank"><img src="img/browser-chrome.svg" /></a></td>
+                                            <td><a href="https://chrome.google.com/webstore/detail/former2-helper/fhejmeojlbhfhjndnkkleooeejklmigi" target="_blank" style="font-weight: 600;">&nbsp;Install Former2 Helper for Google Chrome</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://addons.mozilla.org/en-US/firefox/addon/former2-helper/" target="_blank"><img src="img/browser-firefox.svg" /></a></td>
+                                            <td><a href="https://addons.mozilla.org/en-US/firefox/addon/former2-helper/" target="_blank" style="font-weight: 600;">&nbsp;Install Former2 Helper for Mozilla Firefox</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://microsoftedge.microsoft.com/addons/detail/okkjnfohglnomdbpimkcdkiojbeiedof" target="_blank"><img src="img/browser-edge.svg" /></a></td>
+                                            <td><a href="https://microsoftedge.microsoft.com/addons/detail/okkjnfohglnomdbpimkcdkiojbeiedof" target="_blank" style="font-weight: 600;">&nbsp;Install Former2 Helper for Microsoft Edge</a></td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p>If you have any questions, bugs or feature requests please <a href="https://github.com/iann0036/former2/issues" target="_blank">raise an issue</a> via GitHub.</p>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="tbl steps-numeric-footer">
+                        <div class="tbl-row">
+                            <a href="#section-setup-credentials" class="tbl-cell color-green">Continue to Credentials →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-setup-credentials" data-section-breadcrumb1-title="Setup" data-section-breadcrumb1-link="#section-setup-introduction" data-section-title="Credentials" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div class="steps-numeric-header">
+                        <div class="steps-numeric-header-in">
+                            <ul>
+                                <li><div class="item"><span class="num">1</span>Introduction</div></li>
+                                <li class="active"><div class="item"><span class="num">2</span>Credentials</div></li>
+                                <li><div class="item"><span class="num">3</span>Parameters</div></li>
+                                <li><div class="item"><span class="num">4</span>Settings</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-numeric-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <h5>Enter your IAM credentials:</h5>
+                                <div class="form-group">
+                                    <input id="credentials-accesskey" type="text" class="form-control credentials-field" placeholder="Access Key ID"/>
+                                </div>
+                                <div class="form-group">
+                                    <input id="credentials-secretkey" type="password" class="form-control credentials-field" placeholder="Secret Access Key"/>
+                                </div>
+                                <div class="form-group">
+                                    <input id="credentials-sessiontoken" type="password" class="form-control credentials-field" placeholder="Session Token (optional)"/>
+                                </div>
+                                <div class="form-group">
+                                    <input id="credentials-assumerole" type="text" class="form-control credentials-field" placeholder="Assumed Role ARN (optional)"/>
+                                </div>
+                                <div class="form-group">
+                                    <input id="credentials-sourceidentity" type="text" class="form-control credentials-field" placeholder="Source Identity (optional)"/>
+                                </div>
+                                <div class="form-group">
+                                    <strong>Logged in as: </strong><span id="user-id"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <p style="text-align: center;">
+                                    <br />
+                                    You will need an IAM key pair to authenticate your requests. If you are not planning on importing resources directly, it is recommended that you provide only read access with these credentials and suggest you assign the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/ReadOnlyAccess" target="_blank">ReadOnlyAccess</a> policy. If you intend to use the Import feature, you should grant appropriate permissions to create the stack.
+                                </p>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="tbl steps-numeric-footer">
+                        <div class="tbl-row">
+                            <a href="#section-setup-introduction" class="tbl-cell">← Return to Introduction</a>
+                            <a href="#section-setup-parameters" class="tbl-cell color-green">Continue to Parameters →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-setup-parameters" data-section-breadcrumb1-title="Setup" data-section-breadcrumb1-link="#section-setup-introduction" data-section-title="Parameters" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div class="steps-numeric-header">
+                        <div class="steps-numeric-header-in">
+                            <ul>
+                                <li><div class="item"><span class="num">1</span>Introduction</div></li>
+                                <li><div class="item"><span class="num">2</span>Credentials</div></li>
+                                <li class="active"><div class="item"><span class="num">3</span>Parameters</div></li>
+                                <li><div class="item"><span class="num">4</span>Settings</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-numeric-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <h5>Parameters</h5>
+                                <p>You can optionally include your own <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html" target="_blank">CloudFormation stack parameters</a> by adding them below. If the default value is set, <code>!Ref</code> or <code>!Sub</code> may be used to reference these parameters in the output if the values match.</p>
+                                <br />
+                                <table id="parameter-table" style="display: none;">
+                                    <thead>
+                                        <tr>
+                                            <th><strong>Name</strong></th>
+                                            <th><strong>Type</strong></th>
+                                            <th><strong>Default Value</strong></th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="parameter-list"></tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                        <form id="add-parameter-form">
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <fieldset class="form-group">
+                                                <label class="form-label semibold" for="add-parameter-name">Name</label>
+                                                <input type="text" class="form-control" id="add-parameter-name" required>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <fieldset class="form-group">
+                                                <label class="form-label semibold" for="add-parameter-default-value">Default Value</label>
+                                                <input type="text" class="form-control" id="add-parameter-default-value">
+                                                <small class="text-muted">Variable substitution will look for this value</small>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <fieldset class="form-group">
+                                                <label class="form-label">&nbsp;</label>
+                                                <button type="submit" class="btn" id="add-parameter-button"><span class="glyphicon glyphicon-plus"></span> Add</button>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <small><a id="add-parameter-expand-link" href="#section-setup-parameters">[+] Advanced Settings</a><br /><br /></small>
+                                        </div>
+                                    </div>
+                                    <div id="add-parameter-expand-section" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-type">Type</label>
+                                                    <input type="text" class="form-control" id="add-parameter-type" placeholder="Type" value="String">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-description">Description</label>
+                                                    <input type="text" class="form-control" id="add-parameter-description">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-constraint-description">Constraint Description</label>
+                                                    <input type="text" class="form-control" id="add-parameter-constraint-description">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-allowed-values">Allowed Values</label>
+                                                    <input type="text" class="form-control" id="add-parameter-allowed-values">
+                                                    <!--<textarea id="add-parameter-allowed-values" class="tags-field"></textarea>-->
+                                                    <small class="text-muted">Use commas to seperate values</small>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-allowed-pattern">Allowed Pattern</label>
+                                                    <input type="text" class="form-control" id="add-parameter-allowed-pattern">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-noecho">Mask Parameter (NoEcho)</label>
+                                                    <div class="checkbox-toggle">
+                                                        <input type="checkbox" id="add-parameter-noecho">
+                                                        <label for="add-parameter-noecho">&nbsp;</label>
+                                                    </div>
+                                                    <small class="text-muted">This will <b>not</b> mask the value within Former2</small>
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-minimum-length">Minimum Length</label>
+                                                    <input type="text" class="form-control" id="add-parameter-minimum-length">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-maximum-length">Maximum Length</label>
+                                                    <input type="text" class="form-control" id="add-parameter-maximum-length">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-minimum-value">Minimum Value</label>
+                                                    <input type="text" class="form-control" id="add-parameter-minimum-value">
+                                                </fieldset>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <fieldset class="form-group">
+                                                    <label class="form-label semibold" for="add-parameter-maximum-value">Maximum Value</label>
+                                                    <input type="text" class="form-control" id="add-parameter-maximum-value">
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="tbl steps-numeric-footer">
+                        <div class="tbl-row">
+                            <a href="#section-setup-credentials" class="tbl-cell">← Return to Credentials</a>
+                            <a href="#section-setup-settings" class="tbl-cell color-green">Continue to Settings →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-setup-settings" data-section-breadcrumb1-title="Setup" data-section-breadcrumb1-link="#section-setup-introduction" data-section-title="Settings" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div class="steps-numeric-header">
+                        <div class="steps-numeric-header-in">
+                            <ul>
+                                <li><div class="item"><span class="num">1</span>Introduction</div></li>
+                                <li><div class="item"><span class="num">2</span>Credentials</div></li>
+                                <li><div class="item"><span class="num">3</span>Parameters</div></li>
+                                <li class="active"><div class="item"><span class="num">4</span>Settings</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="steps-numeric-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <h5>Account Scanning</h5>
+                                    <p>Use the below button to pre-populate all categories by triggering a scan for the account:</p>
+                                    <button disabled class="btn btn-sm btn-success scan-account">
+                                        Scan Account
+                                    </button>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>CloudFormation Spacing</h5>
+                                    <p>Change your preference of the number of spaces for the CloudFormation output:</p>
+                                    <select id="cfnspacing" class="select2-arrow manual select2-no-search-arrow">
+                                        <option value="4">4 Spaces</option>
+                                        <option value="2">2 Spaces</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Logical ID Strategy</h5>
+                                    <p>Change your preference for the naming of Logical IDs:</p>
+                                    <select id="logicalidstrategy" class="select2-arrow manual select2-no-search-arrow">
+                                        <option value="serviceprefixhashsuffix">Service prefix + hash suffix</option>
+                                        <option value="shorttypeprefixhashsuffix">Short type prefix + hash suffix</option>
+                                        <option value="longtypeprefixhashsuffix">Long type prefix + hash suffix</option>
+                                        <option value="shorttypeprefixoptionalindexsuffix">Short type prefix + optional index suffix</option>
+                                        <option value="longtypeprefixoptionalindexsuffix" selected>Long type prefix + optional index suffix</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Default Output</h5>
+                                    <p>Change your preference for the default output language:</p>
+                                    <select id="defaultoutput" class="select2-arrow manual select2-no-search-arrow">
+                                        <option value="cloudformation">CloudFormation</option>
+                                        <option value="tf">Terraform</option>
+                                        <option value="troposphere">Troposphere</option>
+                                        <option value="cdk">CDK (V1)</option>
+                                        <option value="cdkv2">CDK (V2)</option>
+                                        <option value="cdktf">CDK (Terraform)</option>
+                                        <option value="pulumi">Pulumi</option>
+                                        <option value="diagram">Diagram</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Irrelevant Resources&nbsp;<span data-tippy-content="Experimental"><i class="fa fa-warning" style="color: #f29824;"></i></span></h5>
+                                    <p>When enabled, this setting will skip resources considered irrelevant (currently only CloudWatch Log Streams):</p>
+                                    <div class="checkbox-toggle">
+                                        <input type="checkbox" id="skipirrelevantresources">
+                                        <label for="skipirrelevantresources">Skip Irrelevant Resources</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <h5>Related Resources</h5>
+                                    <p>When enabled, this setting will suggest resources related to the ones you are adding (requires account scan to work effectively):</p>
+                                    <div class="checkbox-toggle">
+                                        <input type="checkbox" id="relatedresourcessetting">
+                                        <label for="relatedresourcessetting">Enable Related Resources</label>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Add All Resources&nbsp;<span data-tippy-content="Experimental"><i class="fa fa-warning" style="color: #f29824;"></i></span></h5>
+                                    <p>Use the below button to add all scanned resources to the outputs (not recommended):</p>
+                                    <button id="add-all-resources" class="btn btn-sm btn-primary">
+                                        Add All Resources
+                                    </button>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Save / Load Settings</h5>
+                                    <p>Save or load a file containing all configured parameters and settings (except credentials):</p>
+                                    <button id="save-settings" class="btn btn-sm btn-primary">
+                                        <i class="fa fa-floppy-o"></i> Save
+                                    </button>
+                                    &nbsp;
+                                    <button id="load-settings" class="btn btn-sm btn-primary">
+                                        <i class="fa fa-folder-open-o"></i> Load
+                                    </button>
+                                    <input id="load-settings-picker" accept=".json,application/json" type="file" style="display: none;" />
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Programming Language&nbsp;<span data-tippy-content="Experimental"><i class="fa fa-warning" style="color: #f29824;"></i></span></h5>
+                                    <p>Change your preference for the output programming language of CDK or Pulumi outputs:</p>
+                                    <select id="iaclangselect" class="select2-arrow manual select2-no-search-arrow">
+                                        <option value="typescript">TypeScript / JavaScript</option>
+                                        <option value="python">Python</option>
+                                        <option value="java">Java</option>
+                                        <option value="dotnet">C# / .NET</option>
+                                        <option value="go">Go</option>
+                                    </select>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <h5>Default Resources</h5>
+                                    <p>When enabled, this setting will include default resources such as default VPCs and their subnets:</p>
+                                    <div class="checkbox-toggle">
+                                        <input type="checkbox" id="includedefaultresources">
+                                        <label for="includedefaultresources">Include Default Resources</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="tbl steps-numeric-footer">
+                        <div class="tbl-row">
+                            <a href="#section-setup-parameters" class="tbl-cell">← Return to Parameters</a>
+                            <a href="#section-dashboard" class="tbl-cell color-green">Go to Dashboard →</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-search" data-section-breadcrumb1-title="Search" data-section-breadcrumb1-link="#section-search" data-section-title="Search Results" class="former2-section box-typical faq-page" style="display: none;">
+                    <form id="search-form" class="faq-page-header-search" style="background: #1873d2; border-radius: .25rem .25rem .25rem .25rem;" action="#section-search">
+                        <div class="search">
+                            <input id="search-input" type="text" class="form-control form-control-rounded" placeholder="Search for keywords, values, tags etc."/>
+                            <button type="submit" class="find">
+                                <i class="font-icon font-icon-search"></i>
+                            </button>
+                        </div>
+                    </form>
+    
+                    <!--<section class="faq-page-cats">
+                        <div class="row">
+                            <div class="col-md-4">
+                                ...
+                            </div>
+                            <div class="col-md-4">
+                                ...
+                            </div>
+                            <div class="col-md-4">
+                                ...
+                            </div>
+                        </div>
+                    </section>-->
+    
+                    <section id="search-results" class="faq-page-questions" style="display: none;">
+                        <div id="search-no-scan-warning" class="alert alert-warning" role="alert">
+							<strong><i class="fa fa-warning"></i> Account Not Scanned</strong><br>
+							Search results will be limited to only services you have visited. To search across all services in your account, perform an <a href="#section-setup-settings">account scan</a> and retry your search.
+						</div>
+                        <div id="section-search-toolbar" class="f2toolbar">
+                            <button class="additems btn btn-primary" data-datatable="section-search-datatable" disabled>
+                                <i class="font-icon font-icon-plus"></i> Add Selected
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="section-search-datatable"
+                                class="table table-striped f2datatable"
+                                data-toolbar="#section-search-toolbar"
+                                data-search="false"
+                                data-show-refresh="true"
+                                data-show-toggle="true"
+                                data-show-columns="true"
+                                data-show-export="true"
+                                data-detail-view="true"
+                                data-detail-formatter="detailFormatter"
+                                data-minimum-count-columns="2"
+                                data-show-pagination-switch="true"
+                                data-pagination="true"
+                                data-id-field="id"
+                                data-page-size="All"
+                                data-page-list="[10, 25, 50, 100, ALL]"
+                                data-show-footer="false"
+                                data-response-handler="responseHandler">
+                            </table>
+                        </div>
+
+                    </section>
+                </section>
+
+                <div id="templated-section-container"></div>
+
+                <section id="section-outputs-cloudformation" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="CloudFormation" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='cfn_container'>
+                        <textarea id='cfn'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-tf" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="Terraform" class="former2-section" style="display: none;">
+                    <div id='tf_container'>
+                        <textarea id='tf'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-troposphere" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="Troposphere" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='troposphere_container'>
+                        <textarea id='troposphere'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-cdk" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="CDK (V1)" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='cdk_container'>
+                        <textarea id='cdk'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-cdkv2" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="CDK (V2)" data-section-label="Beta" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='cdkv2_container'>
+                        <textarea id='cdkv2'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-cdktf" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="CDK (Terraform)" data-section-label="Beta" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='cdktf_container'>
+                        <textarea id='cdktf'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-pulumi" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="Pulumi" data-section-label="Beta" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='pulumi_container'>
+                        <textarea id='pulumi'></textarea>
+                    </div>
+                </section>
+
+                <section id="section-outputs-diagram" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="Diagram" data-section-label="Beta" class="former2-section box-typical steps-numeric-block f2mb0" style="display: none;">
+                    <div id='diagram_container'>
+                        <iframe id="diagramframe" style="width: 100%; height: 100%; border: 0;"></iframe>
+                    </div>
+                </section>
+
+                <section id="section-outputs-iam" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="IAM" class="former2-section" style="display: none;">
+                    <div class="alert alert-warning alert-fill fade show" role="alert">
+                        <i class="font-icon font-icon-inline font-icon-warning"></i>
+                        <strong>Not Yet Ready</strong><br>
+                        This feature is not yet ready (but I'm working on it!)
+                    </div>
+                </section>
+
+                <section id="section-outputs-raw" data-section-breadcrumb1-title="Outputs" data-section-breadcrumb1-link="#section-outputs-cloudformation" data-section-title="Raw Output (Debug)" class="former2-section box-typical steps-numeric-block" style="display: none;">
+                    <div id='raw_container'>
+                        <textarea id='raw'></textarea>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/lib/tippy/popper.min.js"></script>
+        <script src="js/lib/tippy/tippy-bundle.iife.min.js"></script>
+        <script src="js/lib/tether/tether.min.js"></script>
+        <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+        <script src="js/ui-plugins.js"></script>
+        
+        <script src="js/lib/bootstrap-table/bootstrap-table.js"></script>
+
+        <script src="js/lib/select2/select2.full.min.js"></script>
+        
+        <script src="js/lib/blockUI/jquery.blockUI.js"></script>
+        <script src="js/lib/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+        <script src="js/lib/jquery-tag-editor/jquery.caret.min.js"></script>
+        <script src="js/lib/jquery-tag-editor/jquery.tag-editor.min.js"></script>
+
+        <script src="js/lib/input-mask/jquery.mask.min.js"></script>
+
+        <script src="js/ui-app.js"></script>
+
+        <script src="js/deepmerge.js"></script>
+
+        <script src="js/aws-sdk-2.1260.0.min.js"></script>
+        <script src="js/RelationshipTypeMap.js"></script>
+
+        <script src="js/deferred-datatable.js"></script>
+        <script src="js/mappings.js"></script>
+        <script src="js/datatables.js"></script>
+
+        <script src="js/services/iam.js"></script>
+        <script src="js/services/kms.js"></script>
+        <script src="js/services/vpc.js"></script>
+        <script src="js/services/route53.js"></script>
+        <script src="js/services/ec2.js"></script>
+        <script src="js/services/lambda.js"></script>
+        <script src="js/services/s3.js"></script>
+        <script src="js/services/rds.js"></script>
+        <script src="js/services/elasticache.js"></script>
+        <script src="js/services/opsworks.js"></script>
+        <script src="js/services/redshift.js"></script>
+        <script src="js/services/sns.js"></script>
+        <script src="js/services/sqs.js"></script>
+        <script src="js/services/elasticbeanstalk.js"></script>
+        <script src="js/services/cloudwatch.js"></script>
+        <script src="js/services/cloudtrail.js"></script>
+        <script src="js/services/cloudfront.js"></script>
+        <script src="js/services/dynamodb.js"></script>
+        <script src="js/services/kinesis.js"></script>
+        <script src="js/services/batch.js"></script>
+        <script src="js/services/ecr.js"></script>
+        <script src="js/services/eks.js"></script>
+        <script src="js/services/ecs.js"></script>
+        <script src="js/services/apigateway.js"></script>
+        <script src="js/services/efs.js"></script>
+        <script src="js/services/cloud9.js"></script>
+        <script src="js/services/fsx.js"></script>
+        <script src="js/services/neptune.js"></script>
+        <script src="js/services/documentdb.js"></script>
+        <script src="js/services/codecommit.js"></script>
+        <script src="js/services/codebuild.js"></script>
+        <script src="js/services/codedeploy.js"></script>
+        <script src="js/services/gamelift.js"></script>
+        <script src="js/services/ses.js"></script>
+        <script src="js/services/budgets.js"></script>
+        <script src="js/services/wafandshield.js"></script>
+        <script src="js/services/ram.js"></script>
+        <script src="js/services/certificatemanager.js"></script>
+        <script src="js/services/stepfunctions.js"></script>
+        <script src="js/services/amazonmq.js"></script>
+        <script src="js/services/inspector.js"></script>
+        <script src="js/services/codepipeline.js"></script>
+        <script src="js/services/robomaker.js"></script>
+        <script src="js/services/appsync.js"></script>
+        <script src="js/services/directoryservice.js"></script>
+        <script src="js/services/athena.js"></script>
+        <script src="js/services/opensearch.js"></script>
+        <script src="js/services/iotcore.js"></script>
+        <script src="js/services/iot1click.js"></script>
+        <script src="js/services/autoscaling.js"></script>
+        <script src="js/services/config.js"></script>
+        <script src="js/services/datapipeline.js"></script>
+        <script src="js/services/workspaces.js"></script>
+        <script src="js/services/systemsmanager.js"></script>
+        <script src="js/services/servicecatalog.js"></script>
+        <script src="js/services/iotanalytics.js"></script>
+        <script src="js/services/cloudmap.js"></script>
+        <script src="js/services/sagemaker.js"></script>
+        <script src="js/services/emr.js"></script>
+        <script src="js/services/secretsmanager.js"></script>
+        <script src="js/services/glue.js"></script>
+        <script src="js/services/cognito.js"></script>
+        <script src="js/services/guardduty.js"></script>
+        <script src="js/services/appstream.js"></script>
+        <script src="js/services/dms.js"></script>
+        <script src="js/services/greengrass.js"></script>
+        <script src="js/services/appmesh.js"></script>
+        <script src="js/services/elastictranscoder.js"></script>
+        <script src="js/services/mediapackage.js"></script>
+        <script src="js/services/mediastore.js"></script>
+        <script src="js/services/glacier.js"></script>
+        <script src="js/services/devicefarm.js"></script>
+        <script src="js/services/cloudhsm.js"></script>
+        <script src="js/services/directconnect.js"></script>
+        <script src="js/services/swf.js"></script>
+        <script src="js/services/backup.js"></script>
+        <script src="js/services/transfer.js"></script>
+        <script src="js/services/pinpoint.js"></script>
+        <script src="js/services/licensemanager.js"></script>
+        <script src="js/services/globalaccelerator.js"></script>
+        <script src="js/services/iotthingsgraph.js"></script>
+        <script src="js/services/organizations.js"></script>
+        <script src="js/services/securityhub.js"></script>
+        <script src="js/services/amplify.js"></script>
+        <script src="js/services/msk.js"></script>
+        <script src="js/services/macie.js"></script>
+        <script src="js/services/medialive.js"></script>
+        <script src="js/services/eventbridge.js"></script>
+        <script src="js/services/worklink.js"></script>
+        <script src="js/services/iotevents.js"></script>
+        <script src="js/services/servicequotas.js"></script>
+        <script src="js/services/quicksight.js"></script>
+        <script src="js/services/xray.js"></script>
+        <script src="js/services/lightsail.js"></script>
+        <script src="js/services/codestar.js"></script>
+        <script src="js/services/lakeformation.js"></script>
+        <script src="js/services/managedblockchain.js"></script>
+        <script src="js/services/qldb.js"></script>
+        <script src="js/services/datasync.js"></script>
+        <script src="js/services/storagegateway.js"></script>
+        <script src="js/services/mediaconvert.js"></script>
+        <script src="js/services/appconfig.js"></script>
+        <script src="js/services/groundstation.js"></script>
+        <script src="js/services/resourcegroups.js"></script>
+        <script src="js/services/codeguru.js"></script>
+        <script src="js/services/detective.js"></script>
+        <script src="js/services/costexplorer.js"></script>
+        <script src="js/services/ec2imagebuilder.js"></script>
+        <script src="js/services/kendra.js"></script>
+        <script src="js/services/singlesignon.js"></script>
+        <script src="js/services/appflow.js"></script>
+        <script src="js/services/lex.js"></script>
+        <script src="js/services/codeartifact.js"></script>
+        <script src="js/services/timestream.js"></script>
+        <script src="js/services/interactivevideoservice.js"></script>
+        <script src="js/services/iotsitewise.js"></script>
+        <script src="js/services/databrew.js"></script>
+        <script src="js/services/signer.js"></script>
+        <script src="js/services/devopsguru.js"></script>
+        <script src="js/services/mwaa.js"></script>
+        <script src="js/services/auditmanager.js"></script>
+        <script src="js/services/simpledb.js"></script>
+        <script src="js/services/mediaconnect.js"></script>
+        <script src="js/services/lookoutforvision.js"></script>
+        <script src="js/services/fis.js"></script>
+        <script src="js/services/connect.js"></script>
+        <script src="js/services/nimblestudio.js"></script>
+        <script src="js/services/iotdevicemanagement.js"></script>
+        <script src="js/services/prometheus.js"></script>
+        <script src="js/services/finspace.js"></script>
+        <script src="js/services/frauddetector.js"></script>
+        <script src="js/services/incidentmanager.js"></script>
+        <script src="js/services/apprunner.js"></script>
+        <script src="js/services/costandusagereports.js"></script>
+        <script src="js/services/locationservice.js"></script>
+        <script src="js/services/lookoutforequipment.js"></script>
+        <script src="js/services/healthlake.js"></script>
+        <script src="js/services/memorydb.js"></script>
+        <script src="js/services/rekognition.js"></script>
+        <script src="js/services/panorama.js"></script>
+        <script src="js/services/resiliencehub.js"></script>
+        <script src="js/services/vpcipam.js"></script>
+        <script src="js/services/migrationhub.js"></script>
+        <script src="js/services/forecast.js"></script>
+        <script src="js/services/personalize.js"></script>
+        <script src="js/services/billingconductor.js"></script>
+        <script src="js/services/iottwinmaker.js"></script>
+        
+        <script src="js/app.js"></script>
+    </body>
+</html>

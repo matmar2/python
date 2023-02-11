@@ -1,0 +1,97 @@
+.CodeMirror {
+    font-size: 18px;
+    border: 2px solid #aaaaaa;
+    height: auto;
+}
+
+.bootstrap-table .fixed-table-toolbar .bs-bars {
+    margin-top: 0px !important;
+}
+
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.side-menu-list li.with-sub>span {
+    padding-right: 35px !important;
+}
+
+.tab-pane .table-responsive .bootstrap-table .fixed-table-toolbar {
+    padding: 0px !important;
+}
+
+.site-header .dropdown .btn.dropdown-toggle {
+    background-color: #6b7a85 !important;
+    border-color: #6b7a85 !important;
+}
+
+.credentials-field {
+    max-width: 420px !important;
+}
+
+.f2detailformatter {
+    max-width: 1000px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f2-header-button {
+    margin-top: 18px;
+    float: right;
+    vertical-align: center;
+}
+
+.faq-page-questions {
+    padding: 15px !important;
+}
+
+.param-del {
+    height: 38px;
+    border: none;
+    background: none;
+    font-size: 1.125rem;
+    color: #919fa9;
+}
+.param-del:hover {
+    color: #fa424a;
+}
+.param-del .font-icon {
+    vertical-align: middle;
+}
+
+#parameter-table {
+    margin-bottom: 32px;
+}
+
+#parameter-table>thead>tr>th {
+    min-width: 100px;
+    padding-right: 10px;
+}
+
+#parameter-table>tbody>tr>td {
+    padding-right: 10px;
+}
+
+.f2gutter {
+    width: 1em;
+}
+
+.f2mb0 {
+    margin-bottom: 0px !important;
+}
+
+iframe.fullscreen {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 999999;
+    height: 100%;
+}
