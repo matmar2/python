@@ -1,0 +1,20 @@
+TKT-37 Userdata:
+
+#!/bin/bash
+sudo yum -y update
+sudo yum install -y httpd
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo yum install -y git
+sudo yum install ruby wget -y
+cd /home/ec2-user
+sudo wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+sudo git config --system credential.helper
+sudo git config --system credential.UseHttpPath true
+sudo git config --system credential.UseHttpsPath true
+sudo git config --system user.name "Mathewos" 
+sudo git config --system user.email "matmar2@yahoo.com"
+cd /home/ec2-user
+sudo git clone -b main https://git-codecommit.us-east-1.amazonaws.com/v1/repos/TKT-MAT-37-CodeCommit-Repo /home/ec2-user/TKT-MAT-37-CodeCommit-Repo
