@@ -1,0 +1,17 @@
+
+
+The only way I found to clear the error -
+"botocore.exceptions.ClientError:
+An error occurred (InvalidClientTokenId) when calling the CreateRole
+operation: The security token included in the request is invalid" is to use export in the CLI as below and entering the access key and secret access key.
+
+
+mathewos-viti:~/environment $ export AWS_ACCESS_KEY_ID=xxxxx
+mathewos-viti:~/environment $ export AWS_SECRET_ACCESS_KEY=yyyy
+
+
+
+To create the zip file for handler.py from CLI
+
+mathewos-viti:~/environment/lambda_function $ zip lambda.zip handler.py
+
