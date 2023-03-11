@@ -1,0 +1,37 @@
+EC2 instance - EC2-TKT-56-Lynis - already has the necessery user data to install Lynis, as described earlier.
+
+    SSM document updated “SSM-Automation-TKT-MAT-58”.
+
+{
+  "schemaVersion": "2.2",
+  "description": "Runs the Lynis audit scan",
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "runLynisAudit",
+      "inputs": {
+        "runCommand": [
+          "sh /home/ec2-user/lynis_audit.sh"
+        ]
+      }
+    }
+  ]
+}
+
+2. lynis_audit.sh (executable chmod +x) created in /home/ec2-user
+
+#!/bin/bash
+
+DATE=date '+%Y-%m-%d_%H:%M:%S'
+
+OUTPUT_FILE="/mnt/efs/mat/Audit_Reports/lynis_audit_$DATE.log"
+
+sudo lynis audit system --cron >> $OUTPUT_FILE
+
+ 
+
+3. Tested (Run command SSM Document) and working. Screen shot attached.
+
+4. Created Maintenance Window - “Main-Window-TKT-MAT-58” - cron rate every 2 days at 1200PM (screenshot attached).
+
+4 “Register Run Command - “SSM-Automation-TKT-MAT-58”.” in the Maintenance Window - “Main-Window-TKT-MAT-58” under the name “RegisterRunCommandTask-TKT-MAT-58”.
